@@ -58,11 +58,11 @@ const word = [
 export default function App() {
   return (
     <div className="w-screen h-screen flex justify-center items-center flex-col pt-8">
-      <div className="w-[736px] h-full border border-red-500">
+      <div className="w-[736px] h-full ">
         <Header />
         <SearchBar />
         <List
-          word={word[0].word}
+          word={word[0].word} 
           phonetic={word[0].phonetic}
           audio={word[0].phonetics[0].audio}
           deifinations={word[0].meanings} // Correct data mapping for meanings
