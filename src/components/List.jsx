@@ -34,7 +34,7 @@ function List({ word, phonetic, audio, definitions }) {
      <div className="text-black text-6xl">{word}</div>
      <AudioPlayer src={audio}/>
      </div>
-     <div className="text-[#9c27b0] text-xl" >`/{phonetic}/`</div>
+     <div className="text-[#9c27b0] text-xl" >{phonetic}</div>
 
             {definitions.map((meaning, index) => (
                 <Difinations
