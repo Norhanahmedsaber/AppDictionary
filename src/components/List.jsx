@@ -1,48 +1,22 @@
-/* import AudioPlayer from "./AudioPlayer";
-import Difinations from "./Difinations";
-
-export default function List({ word, phonetic, audio, deifinations }) {
-  return (
-    <div className="flex flex-col
-     justify-between items-start ">
-     <div className=" w-full flex justify-between items-start">   
-      <div className="text-black text-6xl">{word}</div>
-      <AudioPlayer src={audio}/>
-      </div>
-      <div className="text-[#9c27b0] text-xl" >`/{phonetic}/`</div>
-        <div>
-        {deifinations.map((item, index) => (
-          <Difinations
-            key={index}
-            partOfSpeech={item.partOfSpeech} 
-            definitions={item.definitions} 
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
- */
 import PropTypes from 'prop-types';
 import AudioPlayer from "./AudioPlayer";
 import Difinations from "./Difinations";
+
 function List({ word, phonetic, audio, definitions }) {
     return (
-        <div className=" flex flex-col
-     justify-between items-start  p-4">
-     <div className=" w-full flex justify-between items-start">   
-     <div className="text-black text-6xl">{word}</div>
-     <AudioPlayer src={audio}/>
-     </div>
-     <div className="text-[#9c27b0] text-xl" >{phonetic}</div>
+        <div className="flex flex-col justify-between items-start">
+            <div className="w-full flex justify-between items-start">   
+                <div className="text-black text-6xl dark:text-white">{word}</div>
+                <AudioPlayer src={audio} />
+            </div>
+            <div className="text-[#9c27b0] text-xl">{phonetic}</div>
 
             {definitions.map((meaning, index) => (
                 <Difinations
-                key={index}
-                partOfSpeech={meaning.partOfSpeech} 
-                definitions={meaning.definitions} 
-              />
-
+                    key={index}
+                    partOfSpeech={meaning.partOfSpeech} 
+                    definitions={meaning.definitions} // Pass array of definitions here
+                />
             ))}
         </div>
     );
@@ -54,8 +28,10 @@ List.propTypes = {
     audio: PropTypes.string,
     definitions: PropTypes.arrayOf(PropTypes.shape({
         partOfSpeech: PropTypes.string.isRequired,
-        definitions:PropTypes.string.isRequired,
+        definitions: PropTypes.arrayOf(PropTypes.shape({
+            definition: PropTypes.string.isRequired, 
+            example: PropTypes.string, 
+        })).isRequired, 
     })).isRequired,
 };
-
 export default List;

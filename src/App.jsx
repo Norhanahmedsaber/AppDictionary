@@ -6,6 +6,7 @@ import "./Styles/App.css";
 
 export default function App() {
     const [data, setData] = useState(null);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const fetchWordData = async (word) => {
         try {
@@ -18,11 +19,14 @@ export default function App() {
             setData(null);
         }
     };
+    const toggleTheme = () => {
+        setIsDarkMode(prev => !prev);
+    };
 
     return (
-        <div className="w-screen h-screen flex justify-center items-center flex-col pt-8">
+        <div className={`w-screen h-screen flex justify-center items-center flex-col pt-8 ${isDarkMode ? 'dark' : ''}`}>
             <div className="w-[736px] h-full">
-                <Header />
+                <Header isDarkMode={isDarkMode}  toggleTheme={toggleTheme} />
                 <SearchBar onSearch={fetchWordData} />
                 {data && (
                     <List

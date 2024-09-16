@@ -1,0 +1,31 @@
+/* Default Light Theme */
+body {
+    background-color: white;
+    color: black;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-white {
+    color: white;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+/* Dark Theme Overrides */
+.dark .text-black {
+    color: white;
+}
+
+.dark .text-white {
+    color: black;
+}
+
+.dark .text-[#9c27b0] {
+    color: #9c27b0; /* Adjust if needed */
+}
