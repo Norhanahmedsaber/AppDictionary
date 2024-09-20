@@ -5,7 +5,7 @@ import Difinations from "./Difinations";
 function List({ selectedFont,isDarkMode ,word, phonetic, audio, definitions }) {
 
     return (
-        <div className=" overflow-x-hidden w overflow-y-scroll flex flex-col justify-between items-start">
+        <div className=" overflow-x-hidden  flex flex-col justify-between items-start">
             <div className="w-full flex justify-between items-start">   
                 <div className="text-black text-6xl "style={{ fontFamily: selectedFont }}>{word}</div>
                 <AudioPlayer isDarkMode={isDarkMode} src={audio} />
