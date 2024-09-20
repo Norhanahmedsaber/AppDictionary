@@ -38,7 +38,7 @@ function SearchBar({ selectedFont,isDarkMode,onSearch }) {
             />
             <img
                 src={searchIcon}
-                className="absolute right-2 bottom-6 w-[40px] h-[40px] p-2 cursor-pointer"
+                className="absolute right-6 bottom-6 w-[40px] h-[40px] p-2 cursor-pointer"
                 onClick={handleSearch}
             />
         </div>

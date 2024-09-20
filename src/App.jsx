@@ -27,8 +27,8 @@ export default function App() {
     };
 
     return (
-        <div className={`w-screen h-screen flex justify-center items-center flex-col pt-8 ${isDarkMode ? 'dark' : ''}`}>
-            <div className="w-[736px] h-full">
+        <div className={` w-full h-full flex justify-center items-center flex-col pt-8 ${isDarkMode ? 'dark' : 'white'}`}>
+            <div className="w-[736px] h-full ">
                 <Header selectedFont={selectedFont} setSelectedFont={setSelectedFont} isDarkMode={isDarkMode}  toggleTheme={toggleTheme} />
                 <SearchBar  selectedFont={selectedFont} isDarkMode={isDarkMode} onSearch={fetchWordData} />
                 {data && (

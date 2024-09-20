@@ -14,7 +14,7 @@ export default function ControlledSwitches({toggleTheme}) {
     <Switch
       checked={checked}
       onChange={handleChange}
-      inputProps={{ 'aria-label': 'controlled', color:"#9c27b0" }}
+      inputProps={{ 'aria-label': 'controlled', color:"#9c27b0" }}    
       sx={{        
         '& .Mui-checked .MuiSwitch-thumb': {
           color: '#9c27b0', 
@@ -22,8 +22,8 @@ export default function ControlledSwitches({toggleTheme}) {
         '& .Mui-checked + .MuiSwitch-track': {
           backgroundColor: '#9c27b0', 
         },  
-        '& .Mui-checked + css-byenzh-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track ': {
-          backgroundColor: '#9c27b0', 
+        '& .Mui-checked +MuiTouchRipple-root MuiSwitch-track css-1yjjitx-MuiSwitch-track MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-byenzh-MuiButtonBase-root-MuiSwitch-switchBase': {
+          backgroundColor: '#9F39EB', 
         },
       }}
     />

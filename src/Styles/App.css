@@ -1,6 +1,5 @@
-/* Default Light Theme */
+
 body {
-    background-color: white;
     color: black;
 }
 
@@ -17,7 +16,11 @@ body {
     color: white;
 }
 
-/* Dark Theme Overrides */
+/* Dark Theme  */
+.dark .body {
+    color: white;
+    background: black;
+}
 .dark .text-black {
     color: white;
 }
@@ -26,8 +29,8 @@ body {
     color: black;
 }
 
-.dark .text-[#9c27b0] {
-    color: #9c27b0; /* Adjust if needed */
+.dark .text {
+    color: #9c27b0; 
 }
 .dark .ComboboxOptions{
     color: #1F1F1F;
