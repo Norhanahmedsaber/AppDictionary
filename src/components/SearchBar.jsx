@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TextField from "@mui/material/TextField";
 import searchIcon from '../assets/images/seaarchIcon.png';
 
-function SearchBar({ onSearch }) {
+function SearchBar({ selectedFont,isDarkMode,onSearch }) {
     const [input, setInput] = useState('');
 
     const handleSearch = () => {
@@ -11,7 +11,7 @@ function SearchBar({ onSearch }) {
 
     return (
         <div className="flex relative p-4">
-            <TextField
+            <TextField style={{ fontFamily: selectedFont }}
                 fullWidth
                 variant='outlined'
                 placeholder='Search for any word ...'
@@ -19,7 +19,8 @@ function SearchBar({ onSearch }) {
                 sx={{
                     '& .MuiOutlinedInput-root': {
                         borderRadius: 5,
-                        backgroundColor: '#f4f4f4',
+                        backgroundColor: isDarkMode ? '#1F1F1F' : '#f4f4f4',
+                        color:isDarkMode?'white':'black',
                         '& fieldset': {
                             borderColor: 'transparent',
                         },
@@ -28,7 +29,7 @@ function SearchBar({ onSearch }) {
                         },
                         '&.Mui-focused fieldset': {
                             borderColor: 'secondary.main',
-                        },
+                        }, 
                     },
                 }}
                 value={input}

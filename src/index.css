@@ -18,3 +18,22 @@
     src: local("DancingScript-VariableFont_wght"),
     url('./assets/fonts/DancingScript-VariableFont_wght.woff')format("woff")
 }
+@font-face {
+    font-family:"OpenSans";
+    font-style: normal;
+    font-weight: normal;
+    src: local("OpenSans-VariableFont_wdth,wght"),
+    url('./assets/fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf')format("truetype")
+}@font-face {
+    font-family:"PtSerif";
+    font-style: normal;
+    font-weight: normal;
+    src: local("PTSerif-Regular"),
+    url('./assets/fonts/PTSerif-Regular.ttf')format("truetype")
+}@font-face {
+    font-family:"SpaceMono";
+    font-style: normal;
+    font-weight: normal;
+    src: local("SpaceMono-Regular"),
+    url('./assets/fonts/SpaceMono-Regular.ttf')format("truetype")
+}

@@ -7,6 +7,8 @@ import "./Styles/App.css";
 export default function App() {
     const [data, setData] = useState(null);
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [selectedFont, setSelectedFont] = useState('');
+
 
     const fetchWordData = async (word) => {
         try {
@@ -14,6 +16,7 @@ export default function App() {
             if (!response.ok) throw new Error('Word not found');
             const result = await response.json();
             setData(result[0]);
+
         } catch (error) {
             console.error(error);
             setData(null);
@@ -26,10 +29,12 @@ export default function App() {
     return (
         <div className={`w-screen h-screen flex justify-center items-center flex-col pt-8 ${isDarkMode ? 'dark' : ''}`}>
             <div className="w-[736px] h-full">
-                <Header isDarkMode={isDarkMode}  toggleTheme={toggleTheme} />
-                <SearchBar onSearch={fetchWordData} />
+                <Header selectedFont={selectedFont} setSelectedFont={setSelectedFont} isDarkMode={isDarkMode}  toggleTheme={toggleTheme} />
+                <SearchBar  selectedFont={selectedFont} isDarkMode={isDarkMode} onSearch={fetchWordData} />
                 {data && (
-                    <List
+                    <List 
+                    selectedFont={selectedFont} 
+                    isDarkMode ={isDarkMode}
                         word={data.word}
                         phonetic={data.phonetic}
                         audio={data.phonetics[0]?.audio}

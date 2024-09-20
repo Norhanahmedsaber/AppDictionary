@@ -29,3 +29,15 @@ body {
 .dark .text-[#9c27b0] {
     color: #9c27b0; /* Adjust if needed */
 }
+.dark .ComboboxOptions{
+    color: #1F1F1F;
+
+}
+.dark .ComboboxInput{
+    color: #1F1F1F;
+
+}
+.dark .TextField{
+    color: #1F1F1F;
+
+}

@@ -8,7 +8,10 @@ export default {
     extend: {
       fontFamily:{
         fellFrench:["IM Fell French Canon SC", "serif"],
-        DancingScript:["Dancing Script","cursive"]
+        DancingScript:["Dancing Script","cursive"],
+        monoSpace:["OpenSans"],
+        openSans:["PtSerif"],
+        ptSerif:["SpaceMono"]
       }
     },
   },

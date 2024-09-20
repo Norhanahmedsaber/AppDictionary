@@ -9,34 +9,39 @@ import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import { useState } from "react";
 
-const people = [
-  { id: 1, name: "Sans" },
-  { id: 2, name: "Mono" },
-  { id: 3, name: "Sans serif" },
+const fonts = [
+  { id: 1, name: "Sans" ,value: 'openSans' },
+  { id: 2, name: "Mono",value:'monoSpace' },
+  { id: 3, name: "Sans serif",value:"ptSerif" },
 ];
 
-export default function Example() {
+export default function Example({selectedFont,setSelectedFont}) {
   const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState(people[1]);
+  const [selected, setSelected] = useState(fonts[1]);
 
-  const filteredPeople =
+  const handleFontChange = (font) => {
+    setSelected(font); 
+    setSelectedFont(font.value); 
+  };
+
+  const filteredfonts =
     query === ""
-      ? people
-      : people.filter((person) => {
+      ? fonts
+      : fonts.filter((person) => {
           return person.name.toLowerCase().includes(query.toLowerCase());
-        });
+        }); 
 
   return (
     <div className="felx justify-center items-center content-center p-0">
       <Combobox
         value={selected}
-        onChange={(value) => setSelected(value)}
+        onChange={handleFontChange}
         onClose={() => setQuery("")}
       >
         <div className="relative w-fit">
           <ComboboxInput
             className={clsx(
-              "rounded-lg pr-0 bg-white text-sm text-gray-600 w-20",
+              "rounded-lg pr-0 bg-white text-sm text-gray-600 w-20 p-2",
               "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25"
             )}
             displayValue={(person) => person?.name}
@@ -51,10 +56,10 @@ export default function Example() {
           anchor="bottom"
           transition
           className={clsx(
-            "rounded-xl border flex flex-col justify-start border-gray-600 pr-4  empty:invisible transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0  "
+            "rounded-xl border flex flex-col justify-start border-gray-600 pr-4 bg-white  empty:invisible transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0  "
           )}
         >
-          {filteredPeople.map((person) => (
+          {filteredfonts.map((person) => (
             <ComboboxOption
               key={person.id}
               value={person}

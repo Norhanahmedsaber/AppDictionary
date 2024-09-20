@@ -2,18 +2,21 @@ import PropTypes from 'prop-types';
 import AudioPlayer from "./AudioPlayer";
 import Difinations from "./Difinations";
 
-function List({ word, phonetic, audio, definitions }) {
+function List({ selectedFont,isDarkMode ,word, phonetic, audio, definitions }) {
+
     return (
         <div className="flex flex-col justify-between items-start">
             <div className="w-full flex justify-between items-start">   
-                <div className="text-black text-6xl dark:text-white">{word}</div>
-                <AudioPlayer src={audio} />
+                <div className="text-black text-6xl "style={{ fontFamily: selectedFont }}>{word}</div>
+                <AudioPlayer isDarkMode={isDarkMode} src={audio} />
             </div>
-            <div className="text-[#9c27b0] text-xl">{phonetic}</div>
+            <div className="text-[#9c27b0] text-xl" style={{ fontFamily: selectedFont }}>{phonetic}</div>
 
             {definitions.map((meaning, index) => (
                 <Difinations
-                    key={index}
+key={index}
+selectedFont={selectedFont} 
+isDarkMode={isDarkMode}
                     partOfSpeech={meaning.partOfSpeech} 
                     definitions={meaning.definitions} // Pass array of definitions here
                 />
@@ -33,5 +36,6 @@ List.propTypes = {
             example: PropTypes.string, 
         })).isRequired, 
     })).isRequired,
-};
+/*     isDarkMode:PropTypes.boolean.isRequired
+ */ };
 export default List;
