@@ -17,10 +17,11 @@ body {
 }
 
 /* Dark Theme  */
-.dark .body {
-    color: white;
-    background: black;
-}
+body.dark {
+    background-color: black;
+    color: white; 
+  }
+  
 .dark .text-black {
     color: white;
 }

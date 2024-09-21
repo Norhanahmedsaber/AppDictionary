@@ -10,7 +10,7 @@ function SearchBar({ selectedFont,isDarkMode,onSearch }) {
     };
 
     return (
-        <div className="flex relative p-4">
+        <div className="flex relative pt-4 pb-4">
             <TextField style={{ fontFamily: selectedFont }}
                 fullWidth
                 variant='outlined'
